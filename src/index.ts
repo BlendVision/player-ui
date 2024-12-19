@@ -1,3 +1,3 @@
-import {Button, PlayButton} from './buttons'
+import {Button, PlayButton, RewindButton, ForwardButton} from './buttons'
 
-export {Button, PlayButton}
+export {Button, PlayButton, RewindButton, ForwardButton}

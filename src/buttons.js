@@ -12,12 +12,11 @@ import { FormattedMessage, useIntl } from "./intl";
 import Icon from "./Icon";
 
 const styles = {
-  // TODO keep only necessary
   border: "none",
   outline: "none",
   cursor: "pointer",
   padding: 0,
-  flexShrink: 0,
+  fontSize: "100%",
   color: "inherit",
   backgroundColor: "transparent",
   userSelect: "none",
@@ -186,22 +185,23 @@ const LiveButton = ({ usingStartOver, ...rest }) => (
   </Button>
 );
 
-const PlayButton = ({
-  playbackState,
-  ended,
-  hidden,
-  variant,
-  onClick,
-  ...rest
-}) => (
+const PlayButton = ({ playbackState, hidden, variant, onClick, ...rest }) => (
   <Button
     className="play-button"
     startIcon={
       variant ||
-      (ended ? "replay" : playbackState === "playing" ? "pause" : "play")
+      (playbackState === "ended"
+        ? "replay"
+        : playbackState === "playing"
+        ? "pause"
+        : "play")
     }
     title={`KKS.PLAYER.${
-      ended ? "REPLAY" : playbackState === "playing" ? "PAUSE" : "PLAY"
+      playbackState === "ended"
+        ? "REPLAY"
+        : playbackState === "playing"
+        ? "PAUSE"
+        : "PLAY"
     }`}
     onClick={onClick}
     {...rest}
