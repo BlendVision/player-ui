@@ -1,3 +1,5 @@
+Work in progress: Player UI components will be moved to this repository progressively.
+
 # BlendVision Player UI
 
 This repository contains the BlendVision Player UI. It is designed to be integrated with your application easily and flexible to be customized to your needs.

@@ -11,6 +11,7 @@ import fullscreen from './icons/fullscreen.svg';
 import exitFullscreen from './icons/exit-fullscreen.svg';
 import cast from './icons/cast.svg';
 import castConnected from './icons/cast-connected.svg';
+import more from './icons/more.svg';
 
 const icons =  {
   play,
@@ -26,6 +27,7 @@ const icons =  {
   exitFullscreen,
   cast,
   castConnected,
+  more,
 }
 
 export default icons

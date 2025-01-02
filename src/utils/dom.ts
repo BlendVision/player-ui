@@ -56,4 +56,19 @@ const havePointer = Object.assign(() => {
 
 const isDesktop = () => true;
 
-export { getPopoverPosition, getTopElement, havePointer, isDesktop };
+const openShare = ({
+  data = { url: window.location.href },
+  fallback = () => {},
+}) => {
+  if (!isDesktop() && navigator.share) {
+    // TODO more info?
+    return navigator.share(data);
+  }
+  fallback?.();
+};
+
+const isIOS = () =>
+  /iPad|iPhone|iPod/.test(navigator.platform) ||
+  (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+
+export { getPopoverPosition, getTopElement, havePointer, isDesktop, isIOS, openShare };
